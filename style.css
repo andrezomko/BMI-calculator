@@ -15,10 +15,12 @@
     --input-color:#f8f1e9;
     --input-outline:#f2e8c4;
     --input-border:#8d7966;
+    --input-bg:#f8f4e4;
     --pholder-txtcl: #67917a;
 
     --btn-txtcl: #white;
     --btn-bgcl: #705647;
+    --bg-btn-hover:#503d32;
 
     --error-bg: rgb(209, 45, 45);
     --error-txt:white;
@@ -31,14 +33,22 @@
 
 body{
     background-color: var(--bg-color);
-    font-size: 1.6rem;
     font-family: var(--ff-general);
+}
+
+body, input, button{
+    font-size: 1.6rem;
+}
+
+form{
+    width: 30rem;
 }
 
 .container{ /*centralizing using grid:*/
     display: grid;
     height: 100vh;
     place-content: center;
+    padding: 1.6rem;
 }
 
 .card{
@@ -48,4 +58,125 @@ body{
     margin-inline: auto;
     box-shadow: 0 .2rem .4rem rgba(0, 0, 0, 0.1);
     border-radius: 0.6rem;
+}
+
+.title{
+    font-size: 3.2rem;
+    line-height: 4rem;
+}
+
+form h1{
+    margin-bottom: 3.2rem;
+}
+
+form label{
+    font-size: 1.4rem;
+    line-height: 1.8rem;
+    margin-bottom: .8rem;
+    display: block; /*mudar pra block, pois label é inline, e display inline nao aceita margin-bottom*/
+}
+
+form input{
+    width: 100%;
+    border: 1px solid var(--input-border);
+    padding: 1.6rem;
+    border-radius: .4rem;
+}
+
+form input:focus{
+    outline: 2px solid var(--input-outline);
+}
+
+form input::placeholder{
+    color:var(--pholder-txtcl)
+}
+
+.input-wrapper + .input-wrapper{/*input-wrapper que tem anterior a ele um input-wrapper*/
+    margin-top: 1.6rem;
+}
+
+form button{
+    margin-top: 3.2rem;
+    padding: 1.6rem;
+    width: 100%;
+    border: none;
+    border-radius: .4rem;
+    background-color:var(--btn-bgcl);
+
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .8rem;
+
+    font-weight: bold;
+    line-height: 2rem;
+    color: var(--btn-txtcl);
+
+    cursor: pointer;
+    transition: background .3s;/*nao coloco no hover se nao a propriedade vai ser ativada somente quando estiver c o mouse em cima*/
+}   
+
+form button:hover{
+    background:var(--bg-btn-hover) ;
+}
+
+/* modal popup */
+.modal-wrapper.open{
+    opacity: 1;
+    visibility:visible ;
+}
+
+.modal-wrapper{
+    position: absolute;
+    inset: 0; /*top: 0 | bottom: 0| right:0 | left:0 */
+    background: rgba(0, 0, 0, 0.7);
+    display: grid;
+    height: 100%;
+    place-content: center;
+
+    opacity: 0;
+    visibility: hidden;
+}
+
+.modal{
+    position: relative;
+}
+
+.modal button{
+    background: none;
+    border: none;
+    position: absolute;
+    top: 1.6rem;
+    right: 1.4rem;
+    cursor: pointer;
+    transition: transform .3s;
+}
+
+.modal button:hover{
+    transform: scale(1.2);
+}
+
+/* alert error */
+
+.alertError.open{
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0)
+}
+
+.alertError{
+    position: absolute;
+    background-color: var(--error-bg);
+    top: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    color: var(--error-txt);
+    padding: .8rem 0;
+    font-weight: bold;
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(-30px);
+    transition: transform .5s;
 }
