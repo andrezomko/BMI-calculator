@@ -14,3 +14,12 @@ export const Modal = {
 }
 
 Modal.btnClose.onclick = () => Modal.close() //arrow function with one line, dont need to use the {}
+
+// para fechar o popup com a tecla esc:
+window.addEventListener('keydown',handleKeyDown)
+
+function handleKeyDown(event){
+  if(event.key === 'Escape'){
+    Modal.close()
+  }
+}
