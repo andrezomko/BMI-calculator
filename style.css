@@ -7,34 +7,27 @@
 :root{
     font-size: 62.5%;
 
- /*Var colors*/
-    --bg-color:#d8c8b8;
-    --heading-color: #f9d7af;
+ /*Colors Variables*/
 
-    --label-color: #f9efd4;
-    --input-color:#f8f1e9;
-    --input-outline:#f2e8c4;
-    --input-border:#8d7966;
-    --input-bg:#f8f4e4;
-    --pholder-txtcl: #6a5a50;
-    --card-bg-color:#816e62;
+    --fc-form: #bdbdbe;
+    --fc-label:#68686a;
+    --fc-placeholder:#728dad;
 
-    --btn-txtcl: #white;
-    --btn-bgcl: #856656;
-    --bg-btn-hover:#503d32;
+    --bg-color-main: #0B132B;
+    --bg-color-body:#3A506B ;
+    --bgc-input:#D8CBC7;
+    --bgc-btn-hover:#9D5C63;
+    --bgc-error:#721817;
 
-    --error-bg: rgb(209, 45, 45);
-    --error-txt:white;
-
+    --outlinecolor-inputfocus: #9D5C63;
 
 /*Var font*/
     --ff-general: 'Source Sans Pro', sans-serif;
-
 }
 
 body{
-    background-color: var(--bg-color);
     font-family: var(--ff-general);
+    background-color:var(--bg-color-body)
 }
 
 body, input, button{
@@ -43,6 +36,7 @@ body, input, button{
 
 form{
     width: 30rem;
+    color:var(--fc-form);
 }
 
 .container{ /*centralizing using grid:*/
@@ -54,12 +48,11 @@ form{
 
 .card{
     padding: 4.8rem 6.4rem 6.4rem;
-    background-color:var(--card-bg-color);
     max-width: 42.8rem;
     margin-inline: auto;
     box-shadow: 0 .2rem .4rem rgba(0, 0, 0, 0.1);
     border-radius: 0.6rem;
-
+    background-color:var(--bg-color-main);
 }
 
 .title{
@@ -69,7 +62,6 @@ form{
 
 form h1{
     margin-bottom: 3.2rem;
-    color: var(--label-color)
 }
 
 form label{
@@ -77,7 +69,7 @@ form label{
     line-height: 1.8rem;
     margin-bottom: .8rem;
     display: block; /*mudar pra block, pois label é inline, e display inline nao aceita margin-bottom*/
-    color: var(--label-color);
+    color:var(--fc-label);
 }
 
 form input{
@@ -85,16 +77,16 @@ form input{
     border: 1px solid var(--input-border);
     padding: 1.6rem;
     border-radius: .4rem;
-    background-color:#f5f0e3;
-    color:var(--pholder-txtcl);
+    background-color:var(--bgc-input);
+    color: var(--fc-form);
 }
 
 form input:focus{
-    outline: 2px solid var(--input-outline);
+    outline: 2px solid var(--outlinecolor-inputfocus);
 }
 
 form input::placeholder{
-    color: #a2968f;
+    color: var(--fc-placeholder);
 }
 
 .input-wrapper + .input-wrapper{/*input-wrapper que tem anterior a ele um input-wrapper*/
@@ -107,10 +99,8 @@ form button{
     width: 100%;
     border: none;
     border-radius: .4rem;
-    background-color:var(--label-color);
+    background-color: var(--bgc-input);
     
-
-
     display: flex;
     align-items: center;
     justify-content: center;
@@ -118,14 +108,15 @@ form button{
 
     font-weight: bold;
     line-height: 2rem;
-    color: var(--btn-bgcl);
+    color:var(--fc-form);
 
     cursor: pointer;
     transition: background .3s;/*nao coloco no hover se nao a propriedade vai ser ativada somente quando estiver c o mouse em cima*/
 }   
 
 form button:hover{
-    background:var(--bg-btn-hover) ;
+        background-color:var(--bgc-btn-hover) ;
+        color:var(--bgc-input);
 }
 
 /* modal popup */
@@ -141,13 +132,13 @@ form button:hover{
     display: grid;
     height: 100%;
     place-content: center;
-
     opacity: 0;
     visibility: hidden;
 }
 
 .modal{
     position: relative;
+    background-color:#8f8fa8
 }
 
 .modal button{
@@ -174,7 +165,7 @@ form button:hover{
 
 .alertError{
     position: absolute;
-    background-color: var(--error-bg);
+    background-color: var(--bgc-error);
     top: 0;
     left: 0;
     right: 0;
