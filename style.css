@@ -9,17 +9,18 @@
 
  /*Var colors*/
     --bg-color:#d8c8b8;
-    --heading-color: #a8a39d;
+    --heading-color: #f9d7af;
 
     --label-color: #f9efd4;
     --input-color:#f8f1e9;
     --input-outline:#f2e8c4;
     --input-border:#8d7966;
     --input-bg:#f8f4e4;
-    --pholder-txtcl: #67917a;
+    --pholder-txtcl: #6a5a50;
+    --card-bg-color:#816e62;
 
     --btn-txtcl: #white;
-    --btn-bgcl: #705647;
+    --btn-bgcl: #856656;
     --bg-btn-hover:#503d32;
 
     --error-bg: rgb(209, 45, 45);
@@ -53,11 +54,12 @@ form{
 
 .card{
     padding: 4.8rem 6.4rem 6.4rem;
-    background-color: white;
+    background-color:var(--card-bg-color);
     max-width: 42.8rem;
     margin-inline: auto;
     box-shadow: 0 .2rem .4rem rgba(0, 0, 0, 0.1);
     border-radius: 0.6rem;
+
 }
 
 .title{
@@ -67,6 +69,7 @@ form{
 
 form h1{
     margin-bottom: 3.2rem;
+    color: var(--label-color)
 }
 
 form label{
@@ -74,6 +77,7 @@ form label{
     line-height: 1.8rem;
     margin-bottom: .8rem;
     display: block; /*mudar pra block, pois label é inline, e display inline nao aceita margin-bottom*/
+    color: var(--label-color);
 }
 
 form input{
@@ -81,6 +85,8 @@ form input{
     border: 1px solid var(--input-border);
     padding: 1.6rem;
     border-radius: .4rem;
+    background-color:#f5f0e3;
+    color:var(--pholder-txtcl);
 }
 
 form input:focus{
@@ -88,7 +94,7 @@ form input:focus{
 }
 
 form input::placeholder{
-    color:var(--pholder-txtcl)
+    color: #a2968f;
 }
 
 .input-wrapper + .input-wrapper{/*input-wrapper que tem anterior a ele um input-wrapper*/
@@ -101,7 +107,8 @@ form button{
     width: 100%;
     border: none;
     border-radius: .4rem;
-    background-color:var(--btn-bgcl);
+    background-color:var(--label-color);
+    
 
 
     display: flex;
@@ -111,7 +118,7 @@ form button{
 
     font-weight: bold;
     line-height: 2rem;
-    color: var(--btn-txtcl);
+    color: var(--btn-bgcl);
 
     cursor: pointer;
     transition: background .3s;/*nao coloco no hover se nao a propriedade vai ser ativada somente quando estiver c o mouse em cima*/
