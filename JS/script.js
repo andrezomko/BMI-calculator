@@ -5,8 +5,10 @@ import { Modal } from "./modal.js"
 
 // variables
 const form = document.querySelector('form')
-const inputWeight = document.querySelector('#weight')
-const inputHeight = document.querySelector('#height')
+// const inputWeight = document.querySelector('#weight')
+// const inputHeight = document.querySelector('#height')
+
+// const alertError = document.querySelector('.alertError')
 
 // const modalWrapper =document.querySelector('.modal-wrapper')
 // const modalMsg =document.querySelector('.modal .title span')
@@ -18,9 +20,16 @@ const inputHeight = document.querySelector('#height')
 //tratar o submit do form:
 form.onsubmit = function(event){
     event.preventDefault() //n quero que carregue a pagina ao submit
-    
-    const weight = inputWeight.value
-    const height = inputHeight.value
+
+    const weight = Modal.inputWeight.value
+    const height = Modal.inputHeight.value
+
+
+    if(weight == '' || height == ''){
+        //msg erro
+        Modal.errorMessageOn()
+        return
+    }
 
     const result = IMC(weight,height)
 
