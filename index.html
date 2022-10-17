@@ -11,7 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 
-    <script src="script.js" defer></script>
+    <script src="script.js" type="module" defer></script>
 </head>
 <body>
     <div class="container">
@@ -21,12 +21,12 @@
 
                 <div class="input-wrapper">
                     <label for="weight">Weight (kg)</label>
-                    <input id="weight" type="text" placeholder="80">
+                    <input id="weight" type="number" placeholder="80">
                     
                 </div>
                 <div class="input-wrapper">
                     <label for="height">Height (cm)</label>
-                    <input id="height" type="text" placeholder="180">
+                    <input id="height" type="number" placeholder="180">
                 </div>
 
                 <button type="submit">Calculate BMI</button>
@@ -40,13 +40,14 @@
         <div class="modal card">
             <h2 class="title" >
                 <button class="close">X</button>
-                Your IBM is 28
+                <span>                Your IBM is 28
+                </span>
             </h2>
         </div>
     </div>
 
 <!-- erro alert msg -->
-<div class="alertError open">Please, type numbers only!</div>
+<div class="alertError">Please, type numbers only!</div>
 
     
     
