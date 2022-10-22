@@ -78,7 +78,7 @@ form input{
     padding: 1.6rem;
     border-radius: .4rem;
     background-color:var(--bgc-input);
-    color: var(--fc-form);
+    color: rgb(27, 27, 27);
 }
 
 form input:focus{
